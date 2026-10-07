@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#162d27">
+  <title>Pokémon Chibi Adventure • SENAI-SP</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="game" aria-label="Pokémon Chibi Adventure">
+    <div id="scene" aria-label="Arena 3D"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <header class="brand"><span class="brand-icon" aria-hidden="true">ϟ</span><span>POKÉMON <b>CHIBI ADVENTURE</b></span></header>
+    <nav class="utilities" aria-label="Configurações do jogo">
+      <button id="sound-button" class="icon-button" type="button" aria-pressed="false" title="Ativar ou silenciar áudio">Som: ligado</button>
+      <button id="pause-button" class="icon-button" type="button" hidden title="Pausar (P ou Esc)">Ⅱ Pausar</button>
+    </nav>
+
+    <section id="hud" class="hud" hidden aria-label="Informações da partida">
+      <div class="hud-cell"><span class="eyebrow">FASE <span id="phase-number">1 / 5</span></span><strong id="biome-name">Rota Inicial</strong><div id="phase-dots" class="phase-dots" aria-hidden="true"></div></div>
+      <div class="hud-cell time-cell"><span class="eyebrow">TEMPO RESTANTE</span><strong id="timer">01:30</strong><div class="time-track"><div id="time-fill"></div></div></div>
+      <div class="hud-cell"><span class="eyebrow">POKÉBOLAS</span><strong><span class="mini-ball" aria-hidden="true"></span><span id="collection-count">0 / 8</span></strong><span class="hud-hint">Colete todas para avançar</span></div>
+    </section>
+    <div id="boost-indicator" class="boost-indicator" hidden><span>ϟ AGILIDADE +50%</span><b id="boost-time">5s</b><div><i id="boost-fill"></i></div></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <section id="menu" class="overlay menu">
+      <div class="menu-copy">
+        <span class="tag"><i></i> AVENTURA 3D · 5 FASES</span>
+        <h1>Uma pequena<br>faísca.<br><em>Uma grande<br>aventura.</em></h1>
+        <p class="menu-subtitle">Pokémon Chibi Adventure</p>
+        <p class="description">Explore cinco biomas com Pikachu e encontre todas as Pokébolas antes que o tempo acabe.</p>
+        <button id="start-button" class="primary-button" type="button">Iniciar Jogo <span aria-hidden="true">↗</span></button>
+        <div class="controls-guide"><div class="key-group"><kbd>W</kbd><div><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></div></div><span>ou <b>↑ ← ↓ →</b><br>para explorar</span><span class="guide-divider"></span><span><kbd>P</kbd> pausa<br><kbd>M</kbd> áudio</span></div>
+      </div>
+      <aside class="menu-caption"><span class="tag">#025 · TIPO ELÉTRICO</span><strong>Pikachu</strong><span>Pequeno no tamanho. Gigante na energia.</span></aside>
+      <div class="menu-bottom"><span>PROJETO PRÁTICO <b>SENAI-SP</b></span><span>Explorar. Coletar. Evoluir.</span></div>
+    </section>
+
+    <section id="result" class="overlay centered" hidden aria-labelledby="result-title">
+      <div class="result-card"><div id="result-icon" class="result-icon" aria-hidden="true">ϟ</div><span id="result-label" class="eyebrow">AVENTURA</span><h2 id="result-title">Tempo Esgotado</h2><p id="result-description"></p><button id="result-button" class="primary-button" type="button">Reiniciar fase <span aria-hidden="true">↗</span></button><button id="menu-button" class="text-button" type="button">Voltar ao menu</button></div>
+    </section>
+    <section id="transition" class="transition" hidden aria-live="polite"><span class="eyebrow">FASE CONCLUÍDA</span><h2 id="transition-title"></h2><p id="transition-next"></p></section>
+    <footer id="game-footer" class="game-footer" hidden><span><kbd>WASD</kbd> / <kbd>↑←↓→</kbd> mover <span class="footer-separator">·</span> <kbd>P</kbd> pausa</span><span id="seed-label">SEED 12345</span></footer>
+    <div id="touch-controls" class="touch-controls" hidden aria-label="Controles de movimento"><button data-direction="ArrowUp" aria-label="Mover para cima">↑</button><div><button data-direction="ArrowLeft" aria-label="Mover para esquerda">←</button><button data-direction="ArrowDown" aria-label="Mover para baixo">↓</button><button data-direction="ArrowRight" aria-label="Mover para direita">→</button></div></div>
+    <noscript>Ative o JavaScript para jogar Pokémon Chibi Adventure.</noscript>
+  </main>
+  <audio id="bgm" src="./Musica.mp3" preload="none" loop></audio>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
